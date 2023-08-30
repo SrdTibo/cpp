@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:27:02 by tserdet           #+#    #+#             */
-/*   Updated: 2023/08/30 09:01:27 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/08/30 20:50:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main (int argc, char **argv)
 
 	if (argc < 2)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 
