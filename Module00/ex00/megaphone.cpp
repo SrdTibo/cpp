@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:27:02 by tserdet           #+#    #+#             */
-/*   Updated: 2023/08/29 11:58:26 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/08/30 09:01:27 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main (int argc, char **argv)
 	int i = 1;
 	int j = 0;
 
-	if (argc == 1)
+	if (argc < 2)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 		return (0);
@@ -30,8 +30,10 @@ int main (int argc, char **argv)
 			std::cout << (char)std::toupper(argv[i][j]);
 			j++;
 		}
+		std::cout << ' ';
 		j = 0;
 		i++;
 	}
+	std::cout << std::endl;
 	return 0;
 }
