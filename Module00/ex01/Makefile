@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/08/30 11:51:50 by tserdet          ###   ########.fr        #
+#    Updated: 2023/09/04 11:00:59 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+NAME = phonebook
 
 all: $(NAME)
 
