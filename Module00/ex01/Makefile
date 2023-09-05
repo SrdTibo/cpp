@@ -10,25 +10,33 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp
-OBJ = $(SRC:.cpp=.o)
+
+#-----------------VARIABLES------------------
+#--------------------------------------------
+# VARIABLES FOR DOT C
+PHONEBOOK = main.cpp Contact.cpp PhoneBook.cpp
+# VARIABLES FOR DOT O
+PHONEBOOK_OBJ = $(PHONEBOOK:.cpp=.o)
+# VARIABLES FOR DO A COMPILATION
 CC = g++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = phonebook
+RM = rm -rf
+#--------------------------------------------
+#-----------------EXECUTING------------------
+#--------------------------------------------
+all : $(NAME)
 
-all: $(NAME)
+$(NAME) : $(PHONEBOOK_OBJ)
+	$(CC) $(CFLAGS) $(PHONEBOOK_OBJ) -o $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+clean :
+	$(RM) $(PHONEBOOK_OBJ)
 
-clean:
-	$(RM) $(OBJ)
-
-fclean: clean
+fclean :	clean
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re :	fclean all
 
-.PHONY: all clean fclean re
+.PHONY :	all clean fclean re
+#--------------------------------------------

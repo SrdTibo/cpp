@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 15:21:01 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/01 15:21:01 by marvin           ###   ########.fr       */
+/*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
+/*   Updated: 2023/09/01 15:18:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
-
-class	Contact
+Contact::Contact(void)
 {
-	public:
+	std::cout << "Constructor called" << std::endl;
+	return ;
+}
 
-		Contact(void);
-		~Contact(void);
-};
-
-#endif
+Contact::~Contact(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return ;
+}
