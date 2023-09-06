@@ -6,14 +6,14 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 11:35:00 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 11:55:26 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook(void) :_cnt(0)
+PhoneBook::PhoneBook(void) : _cnt(0)
 {
 	return ;
 }
@@ -58,6 +58,9 @@ void	PhoneBook::add_contact(void)
 		}
 	}
 	_contact[_cnt].set(first_name, last_name, nickname, phone_number, darkest_secret);
+	std::cout << _cnt << std::endl;
 	_cnt++;
+	if (_cnt > 7)
+		_cnt = 0;
 	std::cout << "\e[0;32mContact Added!\e[0m" << std::endl;
 }

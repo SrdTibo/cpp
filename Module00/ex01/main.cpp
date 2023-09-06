@@ -23,7 +23,7 @@ int	main(void)
 		std::getline (std::cin,prompt);
 		if (prompt == "ADD")
 		{
-			std::cout << "-----ADD CONTACT-----" << std::endl;
+			std::cout << "\e[0;36m-----ADD CONTACT-----\e[0m" << std::endl;
 			repertoire.add_contact();
 		}
 		else if (prompt == "SEARCH")
