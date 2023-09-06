@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 12:49:52 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 13:01:29 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	PhoneBook::search_contact(void)
 	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
 	std::cout << "\e[0;36m|   INDEX   | FIRST NAME | LAST NAME | NICNAME |\e[0m" << std::endl;
 	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		std::cout << "| " << std::setw(10) << i;
 		std::cout << "| " << std::setw(10) << _contact[i].get_first_name();
@@ -89,5 +89,4 @@ void	PhoneBook::search_contact(void)
 			return ;
 		}
 	}
-
 }
