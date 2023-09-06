@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	PhoneBook	répertoire;
+	PhoneBook	repertoire;
 	std::string prompt;
 	while (1)
 	{
@@ -24,7 +24,7 @@ int	main(void)
 		if (prompt == "ADD")
 		{
 			std::cout << "-----ADD CONTACT-----" << std::endl;
-			répertoire.add_contact();
+			repertoire.add_contact();
 		}
 		else if (prompt == "SEARCH")
 			std::cout << "SEARCH" << std::endl;

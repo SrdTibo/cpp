@@ -6,22 +6,20 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 10:18:48 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 11:35:00 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) :_cnt(0)
 {
-	//std::cout << "Constructor called" << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	//std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -48,5 +46,18 @@ void	PhoneBook::add_contact(void)
 		std::cout << "\e[0;31mA field cannot be empty !\e[0m" << std::endl;
 		return ;
 	}
+	else
+	{
+		for (int i = 0; i < phone_number.length(); i++)
+		{
+			if (!isdigit(phone_number[i]))
+			{
+				std::cout << "\e[0;31mPhone Number need to be only numbers\e[0m" << std::endl;
+				return ;
+			}
+		}
+	}
+	_contact[_cnt].set(first_name, last_name, nickname, phone_number, darkest_secret);
+	_cnt++;
 	std::cout << "\e[0;32mContact Added!\e[0m" << std::endl;
 }

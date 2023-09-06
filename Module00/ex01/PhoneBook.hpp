@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
-
 #ifndef PHONEBOOK_CLASS_H
 # define PHONEBOOK_CLASS_H
+#include "Contact.hpp"
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <string>
 
 class	PhoneBook
 {
