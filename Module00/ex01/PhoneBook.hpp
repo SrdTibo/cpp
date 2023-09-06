@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Contact.hpp"
 
 #ifndef PHONEBOOK_CLASS_H
 # define PHONEBOOK_CLASS_H
@@ -18,9 +19,14 @@
 class	PhoneBook
 {
 	public:
-
 		PhoneBook(void);
 		~PhoneBook(void);
+
+		void add_contact(void);
+
+	private:
+		Contact	_contact[8];
+		int		_cnt;
 };
 
 #endif

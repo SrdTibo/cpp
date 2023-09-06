@@ -16,5 +16,23 @@
 int	main(void)
 {
 	PhoneBook	répertoire;
+	std::string prompt;
+	while (1)
+	{
+		std::cout << "PhoneBook : ";
+		std::getline (std::cin,prompt);
+		if (prompt == "ADD")
+		{
+			std::cout << "-----ADD CONTACT-----" << std::endl;
+			répertoire.add_contact();
+		}
+		else if (prompt == "SEARCH")
+			std::cout << "SEARCH" << std::endl;
+		else if (prompt == "EXIT")
+		{
+			std::cout << "Exiting..." << std::endl;
+			return (0);
+		}
+	}
 	return (0);
 }

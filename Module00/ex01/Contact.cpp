@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/01 15:18:42 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/06 10:22:34 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	//std::cout << "Constructor called" << std::endl;
 	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 	return ;
+}
+
+int Contact:set(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string dark_secret)
+{
+
 }
