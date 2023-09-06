@@ -14,6 +14,7 @@
 # define PHONEBOOK_CLASS_H
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <cctype>
 #include <string>
@@ -25,6 +26,7 @@ class	PhoneBook
 		~PhoneBook(void);
 
 		void add_contact(void);
+		void search_contact(void);
 
 	private:
 		Contact	_contact[8];

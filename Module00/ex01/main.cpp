@@ -27,7 +27,7 @@ int	main(void)
 			repertoire.add_contact();
 		}
 		else if (prompt == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+			repertoire.search_contact();
 		else if (prompt == "EXIT")
 		{
 			std::cout << "Exiting..." << std::endl;

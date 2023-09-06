@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 11:55:26 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 12:49:52 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,31 @@ void	PhoneBook::add_contact(void)
 	if (_cnt > 7)
 		_cnt = 0;
 	std::cout << "\e[0;32mContact Added!\e[0m" << std::endl;
+}
+
+void	PhoneBook::search_contact(void)
+{
+	std::string index;
+	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
+	std::cout << "\e[0;36m|   INDEX   | FIRST NAME | LAST NAME | NICNAME |\e[0m" << std::endl;
+	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
+	for (int i = 0; i < 9; i++)
+	{
+		std::cout << "| " << std::setw(10) << i;
+		std::cout << "| " << std::setw(10) << _contact[i].get_first_name();
+		std::cout << "| " << std::setw(10) << _contact[i].get_last_name();
+		std::cout << "| " << std::setw(10) << _contact[i].get_nickname();
+		std::cout << "| " << std::endl;
+	}
+	std::cout << "Index : ";
+	std::getline (std::cin, index);
+	for (int i = 0; i < index.length(); i++)
+	{
+		if (!isdigit(index[i]))
+		{
+			std::cout << "\e[0;31mOnly numbers accepted\e[0m" << std::endl;
+			return ;
+		}
+	}
+
 }
