@@ -21,14 +21,14 @@ int	main(void)
 	{
 		std::cout << "PhoneBook : ";
 		std::getline (std::cin,prompt);
-		if (prompt == "ADD")
+		if (prompt.compare("ADD") == 0)
 		{
 			std::cout << "\e[0;36m-----ADD CONTACT-----\e[0m" << std::endl;
 			repertoire.add_contact();
 		}
-		else if (prompt == "SEARCH")
+		else if (prompt.compare("SEARCH") == 0)
 			repertoire.search_contact();
-		else if (prompt == "EXIT")
+		else if (prompt.compare("EXIT") == 0)
 		{
 			std::cout << "Exiting..." << std::endl;
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 13:42:15 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:15:11 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	PhoneBook::add_contact(void)
 		}
 	}
 	_contact[_cnt].set(first_name, last_name, nickname, phone_number, darkest_secret);
-	std::cout << _cnt << std::endl;
 	_cnt++;
 	if (_cnt > 7)
 		_cnt = 0;
@@ -82,17 +81,17 @@ void	PhoneBook::search_contact(void)
 	}
 	std::cout << "Index : ";
 	std::cin >> index_inchar;
-	if (!isdigit(index_inchar[0]) || atoi(index_inchar) < 0 || atoi(index_inchar) > 7)
+	if (isdigit(index_inchar[0]) && atoi(index_inchar) >= 0 && atoi(index_inchar) <= 7)
 	{
-		std::cout << "\e[0;31mOnly numbers between 0 and 7 are accepted\e[0m" << std::endl;
-		return ;
+		index = atoi(index_inchar);
+		std::cout << "First Name :" << _contact[index].get_first_name() << std::endl;
+		std::cout << "Last Name :" << _contact[index].get_last_name() << std::endl;
+		std::cout << "Nickname :" << _contact[index].get_nickname() << std::endl;
+		std::cout << "Phone Number :" << _contact[index].get_phone_number() << std::endl;
+		std::cout << "Darkest Secret :" << _contact[index].get_darkest_secret() << std::endl;
 	}
-	index = atoi(index_inchar);
-	std::cout << "First Name :" << _contact[index].get_first_name() << std::endl;
-	std::cout << "Last Name :" << _contact[index].get_last_name() << std::endl;
-	std::cout << "Nickname :" << _contact[index].get_nickname() << std::endl;
-	std::cout << "Phone Number :" << _contact[index].get_phone_number() << std::endl;
-	std::cout << "Darkest Secret :" << _contact[index].get_darkest_secret() << std::endl;
+	else
+		std::cout << "\e[0;31mOnly numbers between 0 and 7 are accepted\e[0m" << std::endl;
 	std::cin.clear();
 	std::cin.ignore(1000, '\n');
 }
