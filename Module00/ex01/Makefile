@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/09/04 11:00:59 by marvin           ###   ########.fr        #
+#    Updated: 2023/09/06 14:19:44 by tserdet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PHONEBOOK = main.cpp Contact.cpp PhoneBook.cpp
 PHONEBOOK_OBJ = $(PHONEBOOK:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = phonebook
 RM = rm -rf
 #--------------------------------------------
@@ -28,7 +28,7 @@ RM = rm -rf
 all : $(NAME)
 
 $(NAME) : $(PHONEBOOK_OBJ)
-	$(CC) $(CFLAGS) $(PHONEBOOK_OBJ) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(PHONEBOOK_OBJ) -o $(NAME)
 
 clean :
 	$(RM) $(PHONEBOOK_OBJ)

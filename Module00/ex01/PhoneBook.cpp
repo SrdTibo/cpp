@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 14:15:11 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:21:46 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	PhoneBook::add_contact(void)
 	}
 	else
 	{
-		for (int i = 0; i < phone_number.length(); i++)
+		for (size_t i = 0; i < phone_number.length(); i++)
 		{
 			if (!isdigit(phone_number[i]))
 			{
