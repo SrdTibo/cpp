@@ -14,10 +14,9 @@
 # define PHONEBOOK_CLASS_H
 #include "Contact.hpp"
 #include <iostream>
+#include <string>
 #include <iomanip>
-#include <string>
-#include <cctype>
-#include <string>
+#include <cstdlib>
 
 class	PhoneBook
 {

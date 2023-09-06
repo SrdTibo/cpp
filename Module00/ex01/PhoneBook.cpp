@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:18:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/06 13:01:29 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/06 13:42:15 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	PhoneBook::add_contact(void)
 
 void	PhoneBook::search_contact(void)
 {
-	std::string index;
+	char index_inchar[3];
+	int			index;
 	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
 	std::cout << "\e[0;36m|   INDEX   | FIRST NAME | LAST NAME | NICNAME |\e[0m" << std::endl;
 	std::cout << "\e[0;36m------------------------------------------------\e[0m" << std::endl;
@@ -80,13 +81,18 @@ void	PhoneBook::search_contact(void)
 		std::cout << "| " << std::endl;
 	}
 	std::cout << "Index : ";
-	std::getline (std::cin, index);
-	for (int i = 0; i < index.length(); i++)
+	std::cin >> index_inchar;
+	if (!isdigit(index_inchar[0]) || atoi(index_inchar) < 0 || atoi(index_inchar) > 7)
 	{
-		if (!isdigit(index[i]))
-		{
-			std::cout << "\e[0;31mOnly numbers accepted\e[0m" << std::endl;
-			return ;
-		}
+		std::cout << "\e[0;31mOnly numbers between 0 and 7 are accepted\e[0m" << std::endl;
+		return ;
 	}
+	index = atoi(index_inchar);
+	std::cout << "First Name :" << _contact[index].get_first_name() << std::endl;
+	std::cout << "Last Name :" << _contact[index].get_last_name() << std::endl;
+	std::cout << "Nickname :" << _contact[index].get_nickname() << std::endl;
+	std::cout << "Phone Number :" << _contact[index].get_phone_number() << std::endl;
+	std::cout << "Darkest Secret :" << _contact[index].get_darkest_secret() << std::endl;
+	std::cin.clear();
+	std::cin.ignore(1000, '\n');
 }
