@@ -19,8 +19,14 @@ int main(void)
     std::string name;
     std::cout << "Name of none malloced zombie:";
 	std::getline (std::cin,name);
+    randomChump(name);
 
     std::cout << std::endl;
     std::cout << "Name of malloced zombie:";
-	std::getline (std::cin,name_malloc);
+	std::getline (std::cin,name_alloc);
+    std::cout << std::endl;
+    zombie = newZombie(name_alloc);
+    zombie->announce();
+    delete(zombie);
+
 }

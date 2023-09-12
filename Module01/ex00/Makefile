@@ -14,13 +14,13 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-PHONEBOOK = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
+PHONEBOOK = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 # VARIABLES FOR DOT O
 PHONEBOOK_OBJ = $(PHONEBOOK:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = phonebook
+NAME = zombie
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------

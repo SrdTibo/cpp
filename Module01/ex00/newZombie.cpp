@@ -11,3 +11,10 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie* newZombie(std::string name)
+{
+	Zombie* alloc_zombie = new Zombie;
+	alloc_zombie->setName(name);
+	return(alloc_zombie);
+}
