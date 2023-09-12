@@ -14,6 +14,13 @@
 
 int main(void)
 {
+    Zombie* zombie;
     std::string name_alloc;
     std::string name;
+    std::cout << "Name of none malloced zombie:";
+	std::getline (std::cin,name);
+
+    std::cout << std::endl;
+    std::cout << "Name of malloced zombie:";
+	std::getline (std::cin,name_malloc);
 }

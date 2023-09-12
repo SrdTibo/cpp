@@ -14,7 +14,7 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-PHONEBOOK = main.cpp
+PHONEBOOK = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
 # VARIABLES FOR DOT O
 PHONEBOOK_OBJ = $(PHONEBOOK:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION

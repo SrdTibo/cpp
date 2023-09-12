@@ -12,7 +12,6 @@
 
 #ifndef ZOMBIE_CLASS_H
 # define ZOMBIE_CLASS_H
-#include "Contact.hpp"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -25,7 +24,7 @@ class	Zombie
 		~Zombie(void);
 
         void announce(void);
-    
+
     private:
         std::string _name;
 };
