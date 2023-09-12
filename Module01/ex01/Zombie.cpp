@@ -14,17 +14,17 @@
 
 Zombie::Zombie(void)
 {
-
+    std::cout << "Constructor called" << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-    std::cout << this->_name << this->_N << " died" << std::endl;
+    std::cout << this->_name << " died" << std::endl;
 }
 
 void Zombie::announce(void)
 {
-    std::cout << this->_name << this->_N << ": BraiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->_name << ": BraiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setNameAndN(int N, std::string name)

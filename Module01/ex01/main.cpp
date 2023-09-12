@@ -19,10 +19,10 @@ int main(void)
     int N = 0;
 
     std::cout << std::endl;
-    std::cout << "Name of malloced zombie:";
+    std::cout << "\e[0;36mName of malloced zombie: \e[0m";
 	std::getline (std::cin,name);
     std::cout << std::endl;
-    std::cout << "Number of zombie:";
+    std::cout << "\e[0;36mNumber of zombie: \e[0m";
 	std::cin >> N;
     if (N <= 0 || isdigit(N))
     {
