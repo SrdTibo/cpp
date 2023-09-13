@@ -12,18 +12,19 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon):
+HumanA::HumanA(std::string name, Weapon &Weapon)
 {
+	std::cout << "HumanA is born" << std::endl;
 	this->_name = name;
-	this->_weapon = weapon;
+	this->_weapon = &Weapon;
 }
 
 HumanA::~HumanA(void)
 {
-	std::cout < "Human A is dead" << std::endl;
+	std::cout << "HumanB is dead" << std::endl;
 }
 
-HumanA::attack(void)
+void HumanA::attack(void)
 {
-	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }

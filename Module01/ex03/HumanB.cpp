@@ -13,22 +13,27 @@
 #include "Weapon.hpp"
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name, Weapon &weapon):
+HumanB::HumanB(std::string name, Weapon &Weapon)
 {
-
+	std::cout << "HumanB is born" << std::endl;
+	this->_name = name;
+	this->_weapon = &Weapon;
 }
 
 HumanB::~HumanB(void)
 {
-
+	std::cout << "HumanB is dead" << std::endl;
 }
 
-void HumanB::attack(void)
+void HumanB::attack(void) const
 {
-
+	if (this->_weapon == NULL)
+		std::cout << this->_name << " attacks with his hands" << std::endl;
+	else
+		std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon weapon)
+void HumanB::setWeapon(Weapon &Weapon)
 {
-
+	this->_weapon = &Weapon;
 }
