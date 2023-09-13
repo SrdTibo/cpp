@@ -10,3 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WEAPON_CLASS_H
+# define WEAPON_CLASS_H
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
+
+class	Weapon
+{
+	public:
+		Weapon(void);
+		~Weapon(void);
+        const std::string&	getType(void);
+		void setType(std::string type)
+
+    private:
+        std::string _type;
+};
+
+#endif

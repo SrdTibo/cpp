@@ -10,3 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANA_CLASS_H
+# define HUMANA_CLASS_H
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
+
+class	HumanA
+{
+	public:
+		HumanA(void);
+		~HumanA(void);
+		void attack(void);
+		void setWeapon(Weapon weapon);
+
+    private:
+        std::string _type;
+};
+
+#endif

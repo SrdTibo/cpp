@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/09/12 18:46:27 by marvin           ###   ########.fr        #
+#    Updated: 2023/09/13 11:02:17 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-PHONEBOOK = main.cpp
+PHONEBOOK = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 # VARIABLES FOR DOT O
 PHONEBOOK_OBJ = $(PHONEBOOK:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = violence
+NAME = weapon
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------
