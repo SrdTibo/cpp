@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
 #include "HumanB.hpp"
+
+HumanB::HumanB(std::string name, Weapon &weapon):
+{
+
+}
+
+HumanB::~HumanB(void)
+{
+
+}
+
+void HumanB::attack(void)
+{
+
+}
+
+void HumanB::setWeapon(Weapon weapon)
+{
+
+}
