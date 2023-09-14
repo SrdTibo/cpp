@@ -20,9 +20,7 @@ int main(int argc, char **argv)
 	std::string av1 = argv[1];
 	if (av1 == "file")
 	{
-		std::cout << RED << \
-		"WTF Don't open the compiled file"\
-		<< NC <<std::endl;
+		std::cout << RED << "WTF Don't open the compiled file" << NC <<std::endl;
 		return 1;
 	}
 	if (argc == 4)
@@ -30,8 +28,8 @@ int main(int argc, char **argv)
 		if (av2 == av3)
 		{
 			std::cout << RED << \
-			"S1 and S2 need to be different : ./file <filename> <s1> <s2>"\
-			<< NC <<std::endl;
+				"S1 and S2 need to be different : ./file <filename> <s1> <s2>"\
+				<< NC <<std::endl;
 			return 1;
 		}
 		else
