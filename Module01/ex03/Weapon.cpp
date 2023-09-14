@@ -12,13 +12,16 @@
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(void)
+Weapon::Weapon(std::string str)
 {
+	std::cout << "Weapon created" << std::endl;
+	this->_type = str;
 	return ;
 }
 
 Weapon::~Weapon(void)
 {
+	std::cout << "Weapon destructed" << std::endl;
 	return ;
 }
 
