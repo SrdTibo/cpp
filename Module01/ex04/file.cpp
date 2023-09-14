@@ -25,15 +25,17 @@ File::~File(void)
 
 int File::modifying(std::string filename, std::string s1, std::string s2)
 {
+	std::string file1;
 	(void)s1;
 	(void)s2;
 	const char* convertfile = filename.c_str();
 	std::ifstream ifs (convertfile, std::ifstream::in);
 	char c = ifs.get();
 	while (ifs.good()) {
-		std::cout << c;
+		file1 += c;
 		c = ifs.get();
 	}
 	ifs.close();
+	
 	return 0;
 }
