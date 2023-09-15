@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/09/14 17:26:56 by marvin           ###   ########.fr        #
+#    Updated: 2023/09/15 10:12:58 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = weapon
+NAME = file
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------
