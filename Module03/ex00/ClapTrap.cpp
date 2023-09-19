@@ -67,7 +67,8 @@ void ClapTrap::attack(const std::string& target)
 		this->_energyPoints--;
 	}
 	else
-		std::cout <<RED<< "EnergyPoints or hitPoints too low to attack." <<NC<< std::endl;
+		std::cout <<RED<< "ClapTrap " << this->_name << " energyPoints or hitPoints too low to attack." <<NC<<\
+		 std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -82,12 +83,14 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energyPoints > 0)
+	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{
 		this->_hitPoints += amount;
 		std::cout <<GRN<< "ClapTrap " << this->_name << " took " << amount <<\
-		"hitPoints back" << std::endl;
+		" hitPoints back" << std::endl;
+		this->_energyPoints--;
 	}
 	else
-		std::cout <<RED<< "EnergyPoints are too low" <<NC<< std::endl;
+		std::cout <<RED<< "ClapTrap " << this->_name << " energyPoints or hitPoints too low to attack." <<NC<<\
+		 std::endl;
 }

@@ -27,6 +27,7 @@ int main(void)
     claptrap2.takeDamage(0);
 
     claptrap2.attack("Floki");
+    claptrap2.beRepaired(10);
     claptrap4.takeDamage(5);
     claptrap4.beRepaired(1000);
     claptrap4.takeDamage(1010);
