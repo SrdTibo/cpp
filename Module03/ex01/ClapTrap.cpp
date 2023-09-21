@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout <<CYN<< "User ClapTrap constructor" << this->_name << "called" <<NC<< std::endl;
+	std::cout <<CYN<< "User ClapTrap constructor " << this->_name << " called" <<NC<< std::endl;
 	return;
 }
 
@@ -83,11 +83,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energyPoints > 0 && this->_hitPoints > 0)
+	if (this->_energyPoints > 0)
 	{
 		this->_hitPoints += amount;
 		std::cout <<GRN<< "ClapTrap " << this->_name << " took " << amount <<\
-		" hitPoints back" << std::endl;
+		" hitPoints back" << NC << std::endl;
 		this->_energyPoints--;
 	}
 	else

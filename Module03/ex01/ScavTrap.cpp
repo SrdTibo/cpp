@@ -28,11 +28,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	std::cout <<CYN<< "User ScavTrap constructor" << this->_name << "called" <<NC<< std::endl;
+	std::cout <<CYN<< "User ScavTrap constructor " << this->_name << " called" <<NC<< std::endl;
 	return;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src) ClapTrap(src)
+ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap(src)
 {
 	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
 	*this = src;
@@ -69,4 +69,8 @@ void ScavTrap::attack(const std::string& target)
 	else
 		std::cout <<RED<< "ScavTrap " << this->_name << " energyPoints or hitPoints too low to attack." <<NC<<\
 		 std::endl;
+}
+
+void ScavTrap::guardGate() {
+    std::cout << "ScavTrap " << this->_name << " is now in Gatekeeper mode. Guarding the gate!" << std::endl;
 }

@@ -19,6 +19,7 @@
 #define REDB "\e[41m"
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
 class	ScavTrap : public ClapTrap
 {

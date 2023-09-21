@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/09/20 10:28:34 by marvin           ###   ########.fr        #
+#    Updated: 2023/09/21 11:06:41 by tserdet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = claptrap
+NAME = scavtrap
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------
