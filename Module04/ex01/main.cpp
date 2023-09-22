@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:39:05 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/22 11:15:18 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/22 11:26:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     for ( int i = 0; i < 8; i++ ) {
         delete animals[i];
     }
-    delete j;//should not create a leak
+    delete j;
     delete i;
     Dog basic;
     {
