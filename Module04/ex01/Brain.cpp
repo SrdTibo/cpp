@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:24:48 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 14:36:16 by tserdet          ###   ########.fr       */
+/*   Created: 2023/09/22 10:56:44 by marvin            #+#    #+#             */
+/*   Updated: 2023/09/22 10:56:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Brain::Brain(void)
 {
-	this->_type = "Brain";
 	std::cout <<CYN<< "Default Brain constructor called" <<NC<< std::endl;
 	return;
 }
@@ -29,7 +28,6 @@ Brain::Brain( Brain const & src)
 Brain::~Brain(void)
 {
 	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
-	delete _brain;
 	return;
 }
 
@@ -37,8 +35,8 @@ Brain& Brain::operator=( Brain const & hrs)
 {
 	if (this != &hrs)
 	{
-		for (int i = 0; i < 100; i++) {
-            this->_ideas[i] = hrs._ideas[i];
+		for (int i = 0; i < 100; i++)
+			this->_ideas[i] = hrs._ideas[i];
 	}
 	return *this;
 }

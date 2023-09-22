@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 14:37:27 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:11:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class	Dog : public Animal
 {
@@ -27,9 +28,12 @@ class	Dog : public Animal
 		Dog(void);
 		Dog(std::string name);
 		Dog(Dog const & src);
-		virtual ~Dog(void);
+		~Dog(void);
 
 		Dog &operator=( Dog const & hrs);
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
+
+	private:
+		Brain *_brain;
 };
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:10 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 14:37:08 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:06:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class	Cat : public Animal
 {
@@ -27,9 +28,12 @@ class	Cat : public Animal
 		Cat(void);
 		Cat(std::string name);
 		Cat(Cat const & src);
-		virtual ~Cat(void);
+		~Cat(void);
 
 		Cat &operator=( Cat const & hrs);
-		virtual void makeSound(void)const;
+		void makeSound(void)const;
+
+	private:
+		Brain *_brain;
 };
 #endif

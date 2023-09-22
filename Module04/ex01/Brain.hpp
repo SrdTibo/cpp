@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 14:25:07 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 14:27:43 by tserdet          ###   ########.fr       */
+/*   Created: 2023/09/22 10:56:35 by marvin            #+#    #+#             */
+/*   Updated: 2023/09/22 10:56:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 
 class	Brain
 {
-	private:
-		std::string _ideas[100];
-
 	public:
 		Brain(void);
 		Brain(Brain const & src);
 		~Brain(void);
 
 		Brain &operator=( Brain const & hrs);
+
+	private:
+		std::string _ideas[100];
 };
 #endif
