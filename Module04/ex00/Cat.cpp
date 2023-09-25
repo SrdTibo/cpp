@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:17 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 13:36:30 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:51:39 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Cat::Cat(void) : Animal()
 
 Cat::Cat( Cat const & src) : Animal(src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy Cat constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 Cat::~Cat(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default Cat destructor called" <<NC<< std::endl;
 	return;
 }
 

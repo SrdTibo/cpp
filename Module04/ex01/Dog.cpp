@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:29 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/22 11:11:03 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/25 11:53:07 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog( Dog const & src) : Animal(src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy Dog constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 Dog::~Dog(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default Dog destructor called" <<NC<< std::endl;
 	delete this->_brain;
 	return;
 }

@@ -20,14 +20,14 @@ Brain::Brain(void)
 
 Brain::Brain( Brain const & src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy Brain constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 Brain::~Brain(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default Brain destructor called" <<NC<< std::endl;
 	return;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:39:55 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/22 12:25:30 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/25 11:53:48 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ AAnimal::AAnimal(void)
 
 AAnimal::AAnimal( AAnimal const & src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy AAnimal constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 AAnimal::~AAnimal(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default AAnimal destructor called" <<NC<< std::endl;
 	return;
 }
 

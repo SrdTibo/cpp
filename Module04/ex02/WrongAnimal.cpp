@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 13:41:09 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 13:59:19 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:54:08 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ WrongAnimal::WrongAnimal(void)
 
 WrongAnimal::WrongAnimal( WrongAnimal const & src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy WrongAnimal constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default WrongAnimal destructor called" <<NC<< std::endl;
 	return;
 }
 

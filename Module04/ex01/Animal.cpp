@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:39:55 by tserdet           #+#    #+#             */
-/*   Updated: 2023/09/21 13:34:24 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/09/25 11:52:39 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Animal::Animal(void)
 
 Animal::Animal( Animal const & src)
 {
-	std::cout <<CYN<< "Copy constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Copy Animal constructor called" <<NC<< std::endl;
 	*this = src;
 	return;
 }
 
 Animal::~Animal(void)
 {
-	std::cout <<CYN<< "Default destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< "Default Animal destructor called" <<NC<< std::endl;
 	return;
 }
 
