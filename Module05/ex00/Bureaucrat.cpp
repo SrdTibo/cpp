@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/13 13:27:45 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/13 17:05:35 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,31 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 	return;
 }
 
+void incrementGrade(int i)
+{
+	this->_grade-=1;
+}
+
+void decrementGrade(int i)
+{
+	this->_grade+=1;
+}
+
+int Bureaucrat::getGrade()
+{
+	return(this->_grade);
+}
+
+const std::string Bureaucrat::getName()
+{
+	return(this->_name);
+}
+
 Bureaucrat& Bureaucrat::operator=( Bureaucrat const & hrs)
 {
 	if (this != &hrs)
 	{
-		this->_type = hrs._type;
+		this->_grade = src.getGrade();
 	}
 	return *this;
 }
