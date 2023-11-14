@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 13:18:31 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 14:42:21 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Bureaucrat::decrementGrade(int i)
 	this->_grade+=i;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return(this->_grade);
 }
