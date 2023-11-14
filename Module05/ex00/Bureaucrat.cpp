@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/13 17:05:35 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 13:18:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,26 @@ Bureaucrat::Bureaucrat(int grade)
 
 Bureaucrat::Bureaucrat(const std::string name)
 {
-	std::cout <<CYN<< "Default name Bureaucrat constructor called" <<NC<< std::endl;
-	this->_name = name;
+	std::cout <<CYN<< "Default name Bureaucrat "<< name <<" constructor called" <<NC<< std::endl;
+
 	return;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade)
 {
-	std::cout <<CYN<< "Default name & grade Bureaucrat constructor called" <<NC<< std::endl;
-	this->_name = name;
+	std::cout <<CYN<< "Default name & grade Bureaucrat "<< name << " constructor called" <<NC<< std::endl;
 	this->_grade = grade;
 	return;
 }
 
-void incrementGrade(int i)
+void Bureaucrat::incrementGrade(int i)
 {
-	this->_grade-=1;
+	this->_grade-=i;
 }
 
-void decrementGrade(int i)
+void Bureaucrat::decrementGrade(int i)
 {
-	this->_grade+=1;
+	this->_grade+=i;
 }
 
 int Bureaucrat::getGrade()
@@ -77,7 +76,7 @@ Bureaucrat& Bureaucrat::operator=( Bureaucrat const & hrs)
 {
 	if (this != &hrs)
 	{
-		this->_grade = src.getGrade();
+		this->_grade = hrs.getGrade();
 	}
 	return *this;
 }

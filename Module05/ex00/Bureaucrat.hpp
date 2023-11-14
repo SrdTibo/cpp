@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:30:09 by thib              #+#    #+#             */
-/*   Updated: 2023/11/13 16:58:16 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 13:17:46 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ class	Bureaucrat
 
 		void incrementGrade(int i);
 		void decrementGrade(int i);
-		const std::string getGrade();
-		int getName();
+		int getGrade();
+		const std::string getName();
 
 		Bureaucrat &operator=( Bureaucrat const & hrs);
 
 	private:
 		const std::string _name;
 		int _grade;
+
+		void setGrade(int grade);
 };
 std::ostream	&operator<<(std::ostream &o, Bureaucrat *a);
 #endif
