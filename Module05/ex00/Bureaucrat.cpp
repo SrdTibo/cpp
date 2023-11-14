@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 14:42:21 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 16:09:11 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,22 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src)
 	return;
 }
 
-Bureaucrat::Bureaucrat(int grade)
+Bureaucrat::Bureaucrat(int grade) : _name("default")
 {
 	std::cout <<CYN<< "Default grade Bureaucrat constructor called" <<NC<< std::endl;
 	this->_grade = grade;
 	return;
 }
 
-Bureaucrat::Bureaucrat(const std::string name)
+Bureaucrat::Bureaucrat(const std::string name) : _name(name), _grade(150)
 {
-	std::cout <<CYN<< "Default name Bureaucrat "<< name <<" constructor called" <<NC<< std::endl;
-
+	std::cout <<CYN<< name << " name Bureaucrat constructor called" <<NC<< std::endl;
 	return;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-	std::cout <<CYN<< "Default name & grade Bureaucrat "<< name << " constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< name << " name & grade Bureaucrat "<< name << " constructor called" <<NC<< std::endl;
 	this->_grade = grade;
 	return;
 }
@@ -67,7 +66,7 @@ int Bureaucrat::getGrade() const
 	return(this->_grade);
 }
 
-const std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
 	return(this->_name);
 }
@@ -83,6 +82,6 @@ Bureaucrat& Bureaucrat::operator=( Bureaucrat const & hrs)
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat *a)
 {
-	o << "Bureaucrat " << a->getName() << ":\n\tgrade: " << a->getGrade() << std::endl;
+	o << "Bureaucrat " << a->getName() << " grade: " << a->getGrade() << std::endl;
 	return (o);
 }

@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:30:09 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 14:42:07 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 15:53:58 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class	Bureaucrat
 		void incrementGrade(int i);
 		void decrementGrade(int i);
 		int getGrade() const;
-		const std::string getName();
+		std::string getName() const;
 
 		Bureaucrat &operator=( Bureaucrat const & hrs);
 

@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 14:44:39 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 16:09:32 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(void)
 {
-	Bureaucrat *a = new Bureaucrat(50);
-	std::cout << a->getGrade() << std::endl;
-	std::cout << a->getName() << std::endl;
+	Bureaucrat *a = new Bureaucrat(1150);
+	std::cout << a << std::endl;
 }
