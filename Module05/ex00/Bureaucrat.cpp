@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 16:09:11 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 16:37:09 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 Bureaucrat::Bureaucrat(void)
 {
 	std::cout <<CYN<< "Default Bureaucrat constructor called" <<NC<< std::endl;
+	setGrade(150);
 	return;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout <<CYN<< "Default Bureaucrat destructor called" <<NC<< std::endl;
+	std::cout <<CYN<< this->_name << " bureaucrat destructor called" <<NC<< std::endl;
 	return;
 }
 
@@ -33,32 +34,34 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src)
 
 Bureaucrat::Bureaucrat(int grade) : _name("default")
 {
-	std::cout <<CYN<< "Default grade Bureaucrat constructor called" <<NC<< std::endl;
-	this->_grade = grade;
+	std::cout <<CYN<< "Default grade bureaucrat constructor called" <<NC<< std::endl;
+	setGrade(grade);
 	return;
 }
 
 Bureaucrat::Bureaucrat(const std::string name) : _name(name), _grade(150)
 {
-	std::cout <<CYN<< name << " name Bureaucrat constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< this->_name << " name bureaucrat constructor called" <<NC<< std::endl;
 	return;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
-	std::cout <<CYN<< name << " name & grade Bureaucrat "<< name << " constructor called" <<NC<< std::endl;
-	this->_grade = grade;
+	std::cout <<CYN<< this->_name << " name & grade bureaucrat constructor called" <<NC<< std::endl;
+	setGrade(grade);
 	return;
 }
 
 void Bureaucrat::incrementGrade(int i)
 {
-	this->_grade-=i;
+	std::cout <<CYN<<"Incrementing " << this->_name << "'s grade" <<NC<< std::endl;
+	setGrade(this->_grade - i);
 }
 
 void Bureaucrat::decrementGrade(int i)
 {
-	this->_grade+=i;
+	std::cout <<CYN<<"Decrementing " << this->_name << "'s grade" <<NC<< std::endl;
+	setGrade(this->_grade + i);
 }
 
 int Bureaucrat::getGrade() const
@@ -70,6 +73,26 @@ std::string Bureaucrat::getName() const
 {
 	return(this->_name);
 }
+
+void	Bureaucrat::setGrade(int grade)
+{
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		this->_grade = grade;
+}
+
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too low");
+};
+
+const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too high");
+};
 
 Bureaucrat& Bureaucrat::operator=( Bureaucrat const & hrs)
 {

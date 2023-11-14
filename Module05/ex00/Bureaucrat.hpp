@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:30:09 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 15:53:58 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/14 16:11:52 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,19 @@ class	Bureaucrat
 		int getGrade() const;
 		std::string getName() const;
 
-		Bureaucrat &operator=( Bureaucrat const & hrs);
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		Bureaucrat &operator=( Bureaucrat const & hrs);
 	private:
 		const std::string _name;
 		int _grade;
