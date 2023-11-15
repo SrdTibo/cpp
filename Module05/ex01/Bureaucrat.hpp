@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:30:09 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:41:43 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 16:22:37 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #define REDB "\e[41m"
 #include <iostream>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class	Bureaucrat
 {
@@ -34,6 +37,7 @@ class	Bureaucrat
 		void decrementGrade(int i);
 		int getGrade() const;
 		std::string getName() const;
+		void signForm(Form *f);
 
 		class GradeTooLowException : public std::exception
 		{

@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:32:45 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:34:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 16:23:12 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,11 @@ void	Bureaucrat::setGrade(int grade)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = grade;
+}
+
+void Bureaucrat::signForm(Form *f)
+{
+	f->beSigned(this);
 }
 
 const char *Bureaucrat::GradeTooLowException::what(void) const throw()

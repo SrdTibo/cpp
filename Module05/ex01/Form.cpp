@@ -6,12 +6,11 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:18:48 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 13:36:38 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 16:15:48 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 Form::Form(void): _name("default"), _isSigned(0), _gradeToSign(150), _gradeToExec(150)
 {
@@ -58,6 +57,29 @@ int Form::getGradeExec() const
 	return(this->_gradeToExec);
 }
 
+void Form::beSigned(Bureaucrat *b)
+{
+	if (b->getGrade() <= this->getGradeSign() && b->getGrade() > 0)
+	{
+		this->_isSigned = 1;
+		std::cout << "Bureaucrat " << b->getName() << " signed " << this->getName() << " form" << std::endl;
+	}
+	else if(b->getGrade() > this->getGradeSign() || b->getGrade() > 150)
+		throw Form::GradeTooLowException();
+	else if(b->getGrade() < this->getGradeSign() || b->getGrade() < 1)
+		throw Form::GradeTooHighException();
+}
+
+const char *Form::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too low");
+};
+
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too high");
+};
+
 Form& Form::operator=( Form const & hrs)
 {
 	std::cout << "Form Assignation operator called" << std::endl;
@@ -71,7 +93,7 @@ Form& Form::operator=( Form const & hrs)
 
 std::ostream	&operator<<(std::ostream &o, Form *a)
 {
-	o << "Form " << a->getName() << " is signed: " << a->getSigned()
+	o << "Form " << a->getName() << " signed: " << a->getSigned()
 		<< " grade to sign: " << a->getGradeSign() << " grade to exec: " << a->getGradeExec()<< std::endl;
 	return (o);
 }
