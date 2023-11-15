@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 13:14:58 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 13:36:21 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ class	Form
 		~Form(void);
 		Form(const Form &src);
 
-		const std::string getName();
-		int getSigned();
-		int getGradeSign();
-		int getGradeExec();
+		std::string getName() const;
+		bool getSigned();
+		int getGradeSign() const;
+		int getGradeExec() const;
 
 		Form &operator=( Form const & hrs);
 
 	private:
 		const std::string	_name;
-		int					_isSigned;
+		bool					_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExec;
 };
