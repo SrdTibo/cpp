@@ -6,11 +6,12 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:34:30 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 11:13:06 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
