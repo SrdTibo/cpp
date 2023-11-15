@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:41:32 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 13:14:58 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,27 @@
 #define GRN "\e[0;32m"
 #define CYN "\e[0;36m"
 #define REDB "\e[41m"
-#include <iostream>
-#include <string>
-
+#include "Bureaucrat.hpp"
 class	Form
 {
 	public:
 		Form(void);
+		Form(std::string name, const int gradeToSign, const int _gradeToExec);
 		~Form(void);
 		Form(const Form &src);
+
+		const std::string getName();
+		int getSigned();
+		int getGradeSign();
+		int getGradeExec();
+
 		Form &operator=( Form const & hrs);
 
 	private:
 		const std::string	_name;
-		int					_IsSigned;
-		const int			_GradeToSign;
-		const int			_GradeToExec;
+		int					_isSigned;
+		const int			_gradeToSign;
+		const int			_gradeToExec;
 };
 std::ostream	&operator<<(std::ostream &o, Form *a);
 #endif
