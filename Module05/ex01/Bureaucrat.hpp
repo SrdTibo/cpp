@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:30:09 by thib              #+#    #+#             */
-/*   Updated: 2023/11/14 16:11:52 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 11:41:43 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ class	Bureaucrat
 
 		Bureaucrat &operator=( Bureaucrat const & hrs);
 	private:
-		const std::string _name;
-		int _grade;
+		const std::string 	_name;
+		int 				_grade;
 
 		void setGrade(int grade);
 };

@@ -6,7 +6,7 @@
 #    By: thib <thib@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/11/15 11:12:49 by thib             ###   ########.fr        #
+#    Updated: 2023/11/15 11:36:19 by thib             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-SRC = Bureaucrat.cpp Form.cppmain.cpp
+SRC = Bureaucrat.cpp Form.cpp main.cpp
 # VARIABLES FOR DOT O
 SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION

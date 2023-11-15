@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:18:37 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/15 11:41:32 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ class	Form
 		Form &operator=( Form const & hrs);
 
 	private:
-		const std::string _name;
-		int _IsSigned;
-		const int GradeToSign;
-		const int GradeToExec;
+		const std::string	_name;
+		int					_IsSigned;
+		const int			_GradeToSign;
+		const int			_GradeToExec;
 };
 std::ostream	&operator<<(std::ostream &o, Form *a);
 #endif
