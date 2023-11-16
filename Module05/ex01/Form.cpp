@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:18:48 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 16:15:48 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/16 11:31:30 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ void Form::beSigned(Bureaucrat *b)
 		std::cout << "Bureaucrat " << b->getName() << " signed " << this->getName() << " form" << std::endl;
 	}
 	else if(b->getGrade() > this->getGradeSign() || b->getGrade() > 150)
+	{
+		this->_isSigned = 0;
+		std::cout << "Bureaucrat " << b->getName() << " couldn't sign " << this->getName() << " form because grade is too low" << std::endl;
 		throw Form::GradeTooLowException();
-	else if(b->getGrade() < this->getGradeSign() || b->getGrade() < 1)
-		throw Form::GradeTooHighException();
+	}
 }
 
 const char *Form::GradeTooLowException::what(void) const throw()
@@ -93,7 +95,7 @@ Form& Form::operator=( Form const & hrs)
 
 std::ostream	&operator<<(std::ostream &o, Form *a)
 {
-	o << "Form " << a->getName() << " signed: " << a->getSigned()
-		<< " grade to sign: " << a->getGradeSign() << " grade to exec: " << a->getGradeExec()<< std::endl;
+	o << "Form " << a->getName() << ", signed: " << a->getSigned()
+		<< ", grade to sign: " << a->getGradeSign() << ", grade to exec: " << a->getGradeExec()<< std::endl;
 	return (o);
 }
