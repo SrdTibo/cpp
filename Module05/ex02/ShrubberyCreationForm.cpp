@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 12:40:37 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:41:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 				"        ###" << std::endl <<
 			std::endl;
 			}
-
 		ofs.close();
 	}
 	else
