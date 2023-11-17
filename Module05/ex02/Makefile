@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
+#    By: thib <thib@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/11/16 12:25:35 by tserdet          ###   ########.fr        #
+#    Updated: 2023/11/17 12:51:57 by thib             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-SRC = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp
+SRC = Bureaucrat.cpp AForm.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 # VARIABLES FOR DOT O
 SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION

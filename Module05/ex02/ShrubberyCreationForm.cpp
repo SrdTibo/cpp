@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 12:42:07 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 13:12:16 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() < this->getGradeExec() && this->getSigned() == 1)
 	{
-		std::cout << executor.getName() <<  " executed ShrubberyCreationForm" << std::endl;
+		std::cout <<"Bureaucrat "<< executor.getName() <<  " executed ShrubberyCreationForm" << std::endl;
 		std::ofstream ofs (this->getTarget().c_str(), std::ofstream::out);
 
 		for (int i = 0; i < 5; i++)
