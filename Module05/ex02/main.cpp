@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 13:14:17 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 13:47:37 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
@@ -36,8 +37,18 @@ int main(void)
 	d->execute(*c);
 	d->execute(*c);
 	std::cout << d << std::endl;
+	std::cout << GRN << "----------------PRESIDENTIAL TEST-------------" << NC << std::endl;
+	Bureaucrat *e = new Bureaucrat(1);
+	AForm *f = new PresidentialPardonForm("PRESIDENTIAL", "Mickey");
+	std::cout << f << std::endl;
+	std::cout << e << std::endl;
+	e->signForm(f);
+	f->execute(*e);
+	std::cout << f << std::endl;
 	delete a;
 	delete b;
 	delete c;
 	delete d;
+	delete e;
+	delete f;
 }
