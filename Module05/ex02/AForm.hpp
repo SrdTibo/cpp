@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 12:09:22 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:27:32 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class	AForm
 
 		std::string getName() const;
 		std::string getTarget() const;
-		bool getSigned();
+		bool getSigned()const;
 		int getGradeSign() const;
 		int getGradeExec() const;
 		void beSigned(Bureaucrat *b);

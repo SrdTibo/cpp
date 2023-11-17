@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/16 13:22:45 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:39:34 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main(void)
 {
-	Bureaucrat *a = new Bureaucrat(143);
+	Bureaucrat *a = new Bureaucrat(1);
 	AForm *b = new ShrubberyCreationForm("QQQ", "file");
 	std::cout << b << std::endl;
 	std::cout << a << std::endl;

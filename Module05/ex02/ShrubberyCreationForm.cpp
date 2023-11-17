@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 12:14:47 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:40:37 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,38 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << executor.getName() <<  " executed ShrubberyCreationForm" << std::endl;
-	std::ofstream ofs (this->getTarget().c_str(), std::ofstream::out);
+	if (executor.getGrade() < this->getGradeExec() && this->getSigned() == 1)
+	{
+		std::cout << executor.getName() <<  " executed ShrubberyCreationForm" << std::endl;
+		std::ofstream ofs (this->getTarget().c_str(), std::ofstream::out);
 
-	for (int i = 0; i < 5; i++)
-		{
-			ofs <<
-			"         v" << std::endl <<
-			"        >X<" << std::endl <<
-			"         A" << std::endl <<
-			"        d$b" << std::endl <<
-			"      .d\\$$b." << std::endl <<
-			"    .d$i$$\\$$b." << std::endl <<
-			"       d$$@b" << std::endl <<
-			"      d\\$$$ib" << std::endl <<
-			"    .d$$$\\$$$b" << std::endl <<
-			"  .d$$@$$$$\\$$ib." << std::endl <<
-			"      d$$i$$b" << std::endl <<
-			"     d\\$$$$@$b" << std::endl <<
-			"  .d$@$$\\$$$$$@b." << std::endl <<
-			".d$$$$i$$$\\$$$$$$b." << std::endl <<
-			"        ###" << std::endl <<
-			"        ###" << std::endl <<
-			"        ###" << std::endl <<
-		std::endl;
-		}
+		for (int i = 0; i < 5; i++)
+			{
+				ofs <<
+				"         v" << std::endl <<
+				"        >X<" << std::endl <<
+				"         A" << std::endl <<
+				"        d$b" << std::endl <<
+				"      .d\\$$b." << std::endl <<
+				"    .d$i$$\\$$b." << std::endl <<
+				"       d$$@b" << std::endl <<
+				"      d\\$$$ib" << std::endl <<
+				"    .d$$$\\$$$b" << std::endl <<
+				"  .d$$@$$$$\\$$ib." << std::endl <<
+				"      d$$i$$b" << std::endl <<
+				"     d\\$$$$@$b" << std::endl <<
+				"  .d$@$$\\$$$$$@b." << std::endl <<
+				".d$$$$i$$$\\$$$$$$b." << std::endl <<
+				"        ###" << std::endl <<
+				"        ###" << std::endl <<
+				"        ###" << std::endl <<
+			std::endl;
+			}
 
-	ofs.close();
+		ofs.close();
+	}
+	else
+		std::cout << "Bureaucrat" << executor.getName() <<  " cannot execute ShrubberyCreationForm" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm const & hrs)

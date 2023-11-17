@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:18:48 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 12:01:26 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:27:38 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ std::string AForm::getTarget() const
 	return(this->_target);
 }
 
-bool AForm::getSigned()
+bool AForm::getSigned() const
 {
 	return(this->_isSigned);
 }
