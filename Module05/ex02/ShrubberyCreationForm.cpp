@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 12:41:31 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:42:07 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		ofs.close();
 	}
 	else
-		std::cout << "Bureaucrat" << executor.getName() <<  " cannot execute ShrubberyCreationForm" << std::endl;
+		std::cout << "Bureaucrat " << executor.getName() <<  " cannot execute ShrubberyCreationForm" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=( ShrubberyCreationForm const & hrs)

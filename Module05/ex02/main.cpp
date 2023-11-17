@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 12:39:34 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 12:41:49 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 	AForm *b = new ShrubberyCreationForm("QQQ", "file");
 	std::cout << b << std::endl;
 	std::cout << a << std::endl;
-	a->signForm(b);
+	/* a->signForm(b); */
 	b->execute(*a);
 	std::cout << b << std::endl;
 	delete a;
