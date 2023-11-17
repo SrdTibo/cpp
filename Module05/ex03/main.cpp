@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 14:47:53 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 18:31:28 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@ int main(void)
 	f->execute(*e);
 	std::cout << f << std::endl;
 	std::cout << GRN << "----------------INTERN TEST-------------" << NC << std::endl;
-	Intern someRandomIntern;
-	AForm* rrf;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	e->signForm(rrf);
-	rrf->execute(*e);
+	Intern *g = new Intern();
+	AForm *h = g->makeForm("PresidentialPardonForm", "Bender");
+	if (h)
+		a->signForm(h);
 	delete a;
 	delete b;
 	delete c;
 	delete d;
 	delete e;
 	delete f;
+	delete g;
 }

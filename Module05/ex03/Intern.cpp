@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:23:10 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 14:49:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 18:31:11 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,22 @@ Intern::Intern(Intern const & src)
 	return;
 }
 
-AForm *Intern::makeForm(std::string name, std::string target)
+static AForm	*makePresident(const std::string target)
+{
+	return (new PresidentialPardonForm("Presidential", target));
+}
+
+static AForm	*makeRobot(const std::string target)
+{
+	return (new RobotomyRequestForm("Robotomy", target));
+}
+
+static AForm	*makeShrubbery(const std::string target)
+{
+	return (new ShrubberyCreationForm("Shrubbery", target));
+}
+
+AForm	*Intern::makeForm(const std::string name, const std::string target)
 {
 	AForm *(*all_forms[])(const std::string target) = {&makePresident, &makeRobot, &makeShrubbery};
 	std::string forms[] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
@@ -40,12 +55,11 @@ AForm *Intern::makeForm(std::string name, std::string target)
 	{
 		if (name == forms[i])
 		{
-			std::cout << "Intern creates " << name << " now" << std::endl;
+			std::cout << "Intern creates " << name << std::endl;
 			return (all_forms[i](target));
 		}
 	}
-
-	std::cout << "\033[33mIntern can not create a form called " << name << "\033[0m" << std::endl;
+	std::cout << "Intern can not create a form called " << name << std::endl;
 	return (NULL);
 }
 

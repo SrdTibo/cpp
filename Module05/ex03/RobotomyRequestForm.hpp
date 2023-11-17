@@ -6,12 +6,13 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 13:05:08 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 18:19:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_CLASS_H
 # define ROBOTOMYREQUESTFORM_CLASS_H
+#pragma once
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"

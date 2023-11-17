@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/16 13:20:45 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/17 18:19:34 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_CLASS_H
 # define SHRUBBERYCREATIONFORM_CLASS_H
+#pragma once
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"

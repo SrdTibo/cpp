@@ -6,12 +6,13 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:18 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/17 13:43:07 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/17 18:19:28 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_H
 # define PRESIDENTIALPARDONFORM_H
+#pragma once
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
