@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/16 13:05:15 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:09:22 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	AForm
 		int getGradeSign() const;
 		int getGradeExec() const;
 		void beSigned(Bureaucrat *b);
-		void execute(Bureaucrat const & executor) const;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		AForm &operator=( AForm const & hrs);
 

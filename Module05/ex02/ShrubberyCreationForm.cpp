@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 12:05:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/16 13:23:39 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:14:47 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,31 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	std::cout << executor.getName() <<  " executed ShrubberyCreationForm" << std::endl;
 	std::ofstream ofs (this->getTarget().c_str(), std::ofstream::out);
 
-	ofs << executor.getName();
+	for (int i = 0; i < 5; i++)
+		{
+			ofs <<
+			"         v" << std::endl <<
+			"        >X<" << std::endl <<
+			"         A" << std::endl <<
+			"        d$b" << std::endl <<
+			"      .d\\$$b." << std::endl <<
+			"    .d$i$$\\$$b." << std::endl <<
+			"       d$$@b" << std::endl <<
+			"      d\\$$$ib" << std::endl <<
+			"    .d$$$\\$$$b" << std::endl <<
+			"  .d$$@$$$$\\$$ib." << std::endl <<
+			"      d$$i$$b" << std::endl <<
+			"     d\\$$$$@$b" << std::endl <<
+			"  .d$@$$\\$$$$$@b." << std::endl <<
+			".d$$$$i$$$\\$$$$$$b." << std::endl <<
+			"        ###" << std::endl <<
+			"        ###" << std::endl <<
+			"        ###" << std::endl <<
+		std::endl;
+		}
 
 	ofs.close();
 }

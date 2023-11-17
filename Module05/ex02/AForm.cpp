@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:18:48 by thib              #+#    #+#             */
-/*   Updated: 2023/11/16 13:25:04 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/17 12:01:26 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ AForm::AForm(std::string name, const int gradeToSign, const int _gradeToExec, st
 
 void AForm::execute(Bureaucrat const & executor) const
 {
+	std::cout << "AForm execute function called" << std::endl;
 	(void) executor;
 }
 
