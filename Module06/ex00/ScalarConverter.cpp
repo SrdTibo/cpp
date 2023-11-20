@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/20 14:05:05 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:08:03 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ std::string convertToChar(const std::string& input) {
 
 void ScalarConverter::convert(const std::string& representation)
 {
-	if (input == "inf" || input == "-inf" || input == "+inf")
+	if (input == "-inff" || input == "+inff" || input == "nanf")
 	{
 	// C'est une littérale spéciale pour float et double
 	// Effectuez la conversion appropriée
 	}
-	else if (input == "nan")
+	else if (input == "-inf" || input == "+inf" || input == "nan")
 	{
 	// C'est une littérale spéciale pour float et double
 	// Effectuez la conversion appropriée
