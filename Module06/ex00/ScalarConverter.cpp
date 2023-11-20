@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/20 13:36:30 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:05:05 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,6 @@ ScalarConverter::ScalarConverter(ScalarConverter const & src)
 	return;
 }
 
-int convertToInt(const std::string& input) {
-    std::istringstream stream(input);
-    int result;
-
-    if (!(stream >> result)) {
-        throw std::invalid_argument("Impossible");
-    }
-    return result;
-}
-
 std::string convertToChar(const std::string& input) {
     std::stringstream convertisseur(input);
     std::string result;
@@ -53,37 +43,26 @@ std::string convertToChar(const std::string& input) {
 
 void ScalarConverter::convert(const std::string& representation)
 {
-	// Conversion vers char
-	try
+	if (input == "inf" || input == "-inf" || input == "+inf")
 	{
-		std::string charValue = convertToChar(representation);
-		std::cout << "Char: " << charValue << std::endl;
+	// C'est une littérale spéciale pour float et double
+	// Effectuez la conversion appropriée
 	}
-	catch (const std::invalid_argument& e)
+	else if (input == "nan")
 	{
-		std::cerr << "Char :" << e.what() << std::endl;
+	// C'est une littérale spéciale pour float et double
+	// Effectuez la conversion appropriée
 	}
-
-	// Conversion vers int
-	try
+	else
 	{
-		int intValue = convertToInt(representation);
-		std::cout << "Int: " << intValue << std::endl;
+		try {
+		std::cout << "Int :" << std::stoi(representation) << std::endl;
+		}
+		catch (std::out_of_range const& e)
+		{
+			std::cout<< "Int : Out of Range" << std::endl;
+		}
 	}
-	catch (const std::invalid_argument& e)
-	{
-		std::cerr << "Int :" << e.what() << std::endl;
-	}
-
-	// Conversion vers float
-	float floatValue;
-	std::istringstream(representation) >> floatValue;
-	std::cout << "float: " << floatValue << std::endl;
-
-	// Conversion vers double
-	double doubleValue;
-	std::istringstream(representation) >> doubleValue;
-	std::cout << "double: " << doubleValue << std::endl;
 }
 
 ScalarConverter& ScalarConverter::operator=(ScalarConverter const & hrs)
