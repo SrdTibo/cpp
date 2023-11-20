@@ -6,7 +6,7 @@
 #    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/11/18 10:54:35 by tserdet          ###   ########.fr        #
+#    Updated: 2023/11/20 11:34:38 by tserdet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = bureaucrat
+NAME = scalar
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------

@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/18 10:55:43 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/20 12:59:37 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@
 #define REDB "\e[41m"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class	ScalarConverter
 {
 	public:
-		ScalarConverter(void);
 		~ScalarConverter(void);
 		ScalarConverter(const ScalarConverter &src);
 
+		static void convert(const std::string& representation);
+
 		ScalarConverter &operator=( ScalarConverter const & hrs);
+
+	private:
+		ScalarConverter(void);
 };
 #endif
