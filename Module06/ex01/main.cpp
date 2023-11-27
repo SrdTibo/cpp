@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:36 by thib              #+#    #+#             */
-/*   Updated: 2023/11/27 11:49:56 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 12:00:27 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Data *data = new Data;
-	data->name = "Matthis";
+	data->name = "Thib";
 	data->number = 42;
 
 	uintptr_t data_ptr = serialize(data);

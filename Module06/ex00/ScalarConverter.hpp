@@ -6,13 +6,12 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/27 11:40:58 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 11:49:43 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER
-#define SCALARCONVERTER
-
+#ifndef SCALARCONVERTER_CLASS_H
+#define SCALARCONVERTER_CLASS_H
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
