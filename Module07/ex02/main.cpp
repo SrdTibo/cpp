@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:36:24 by thib              #+#    #+#             */
-/*   Updated: 2023/11/27 16:07:45 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 16:12:30 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int main() {
     std::cout << std::endl;
 
     // Test de l'exception d'indice invalide
-    try {
+    try
+	{
         int value = arrWithSize[10];  // L'indice 10 est hors limites
         std::cout << "Value at index 10: " << value << std::endl;
     } catch (const Array<int>::InvalidIndexException &e) {

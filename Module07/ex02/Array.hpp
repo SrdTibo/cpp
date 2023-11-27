@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:36:23 by thib              #+#    #+#             */
-/*   Updated: 2023/11/27 16:06:28 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 16:10:05 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 #define REDB "\e[41m"
 #include <iostream>
 
+template< typename T>
+
 class	Array
 {
 	public:
 		Array(): _size(0)
 		{
 			std::cout<< CYN<< "Default constructor called"<<NC << std::endl;
-			this->array = new T[this->_size];
+			this->_array = new T[this->_size];
 		}
 
 		~Array()
@@ -42,8 +44,8 @@ class	Array
 
 		Array(unsigned int n): _size(n)
 		{
-			td::cout<< CYN<< "Unsigned int constructor called"<<NC << std::endl;
-			this->array = new T[this->_size];
+			std::cout<< CYN<< "Unsigned int constructor called"<<NC << std::endl;
+			this->_array = new T[this->_size];
 		}
 
 		Array& operator=( Array const & hrs)
@@ -52,10 +54,10 @@ class	Array
 				delete [] this->_array;
 			else if (this != &hrs)
 			{
-				this->_size = src.size();
+				this->_size = hrs.size();
 				this->_array = new T[this->_size];
 				for (unsigned int i = 0; i < this->size(); i++)
-					this->_array[i] = src._array[i];
+					this->_array[i] = hrs._array[i];
 			}
 			return *this;
 		}
