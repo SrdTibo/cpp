@@ -3,73 +3,121 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/20 14:08:03 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:46:59 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter(void)
+ScalarConverter::ScalarConverter()
 {
-	std::cout <<CYN<< "Default ScalarConverter constructor called" <<NC<< std::endl;
-	return;
+	std::cout << "ScalarConverter constructor was created" << std::endl;
 }
 
-ScalarConverter::~ScalarConverter(void)
+ScalarConverter::ScalarConverter(const ScalarConverter &src)
 {
-	std::cout <<CYN <<"ScalarConverter destructor called" <<NC<< std::endl;
-	return;
-}
-
-ScalarConverter::ScalarConverter(ScalarConverter const & src)
-{
-	std::cout <<CYN<< "Copy ScalarConverter constructor called" <<NC<< std::endl;
 	*this = src;
-	return;
+	std::cout << "copy ScalarConverter constructor was created" << std::endl;
 }
 
-std::string convertToChar(const std::string& input) {
-    std::stringstream convertisseur(input);
-    std::string result;
-
-    if (!(convertisseur >> result)) {
-        throw std::invalid_argument("Impossible");
-    }
-    return result;
-}
-
-void ScalarConverter::convert(const std::string& representation)
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter &src)
 {
-	if (input == "-inff" || input == "+inff" || input == "nanf")
+	(void) src;
+	std::cout << "Surchage ScalarConverter constructor was created" << std::endl;
+    return *this;
+}
+
+ScalarConverter::~ScalarConverter()
+{
+	std::cout << "ScalarConverter deconstructor was created" << std::endl;
+}
+
+static int if_char(const std::string &literal) //Si arg = un char et non pas string ou chiffres
+{
+	std::string toChar = "";
+	if (literal.size() == 1 && std::isprint(literal[0]) && !std::isdigit(literal[0]))
 	{
-	// C'est une littérale spéciale pour float et double
-	// Effectuez la conversion appropriée
+		toChar = literal[0];
+		std::cout << "char: " << toChar << std::endl;
+		std::cout << "int: " << static_cast<int>(toChar[0]) << std::endl;
+		std::cout << "float: " << static_cast<float>(toChar[0]) << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(toChar[0]) << ".0" << std::endl;
+		return (1);
 	}
-	else if (input == "-inf" || input == "+inf" || input == "nan")
+	return (0);
+}
+
+static void if_other(const std::string &literal) //Si arg = string ou chiffres
+{
+	std::string specialTypes[6] = { "-inff", "+inff", "nanf", "-inf", "+inf", "nan" };
+	std::string toChar = "";
+	int toInt = 0;
+	float toFloat = 0;
+	double toDouble = 0;
+
+	toInt = std::atoi(literal.c_str());
+
+	if (literal[literal.length() - 1] == 'f')
 	{
-	// C'est une littérale spéciale pour float et double
-	// Effectuez la conversion appropriée
+		toFloat = std::atof(literal.c_str());
+		toDouble = static_cast<double>(toFloat);
 	}
 	else
 	{
-		try {
-		std::cout << "Int :" << std::stoi(representation) << std::endl;
-		}
-		catch (std::out_of_range const& e)
+		toDouble = std::atof(literal.c_str());
+		toFloat = static_cast<float>(toDouble);
+	}
+
+	for (int i = 0; i < 6; ++i) {
+		if (literal == specialTypes[i])
 		{
-			std::cout<< "Int : Out of Range" << std::endl;
+			toChar = "impossible";
+			break;
+		}
+	}
+	if (toChar == "" && std::isprint(toInt))
+	{
+		toChar = "'";
+		toChar += static_cast<char>(toInt);
+		toChar += "'";
+	}
+	else if (toChar == "")
+	{
+		toChar = "Non displayable";
+	}
+
+	std::cout << "char: " << toChar << std::endl;
+	if (toChar == "impossible")
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << toInt << std::endl;
+	if (toChar == "impossible" && toFloat == 0)
+	{
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+	}
+	else
+	{
+		if (toChar != "impossible" && toFloat - static_cast<int>(toFloat) == 0)
+		{
+			std::cout << "float: " << toFloat << ".0f" << std::endl;
+			std::cout << "double: " << toDouble << ".0" << std::endl;
+		}
+		else
+		{
+			std::cout << "float: " << toFloat << "f" << std::endl;
+			std::cout << "double: " << toDouble << std::endl;
 		}
 	}
 }
 
-ScalarConverter& ScalarConverter::operator=(ScalarConverter const & hrs)
+void ScalarConverter::convert(const std::string& literal)
 {
-	if (this != &hrs)
-	{
-		return *this;
-	}
-	return *this;
+
+	if (if_char(literal) == 1)
+		return ;
+	if_other(literal);
 }

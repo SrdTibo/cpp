@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 10:52:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/11/20 13:57:41 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:40:58 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_CLASS_H
-# define SCALARCONVERTER_CLASS_H
+#ifndef SCALARCONVERTER
+#define SCALARCONVERTER
+
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
 #define CYN "\e[0;36m"
 #define REDB "\e[41m"
-#include <iostream>
 #include <string>
-#include <sstream>
+#include <iostream>
+#include <cstdlib>
+#include <climits>
 
-class	ScalarConverter
+class ScalarConverter
 {
 	public:
-		~ScalarConverter(void);
-		ScalarConverter(const ScalarConverter &src);
-
-		static void convert(const std::string& representation);
-
-		ScalarConverter &operator=( ScalarConverter const & hrs);
-
-	private:
-		ScalarConverter(void);
+		public:
+			ScalarConverter();
+			ScalarConverter(const ScalarConverter &src);
+			ScalarConverter& operator=(const ScalarConverter &src);
+			~ScalarConverter();
+			static void convert(const std::string &literal);
 };
+
 #endif
