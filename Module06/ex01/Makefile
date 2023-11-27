@@ -6,7 +6,7 @@
 #    By: thib <thib@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/11/27 11:48:28 by thib             ###   ########.fr        #
+#    Updated: 2023/11/27 13:14:09 by thib             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = scalar
+NAME = data
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------
