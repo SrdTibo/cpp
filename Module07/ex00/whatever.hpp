@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:12:00 by thib              #+#    #+#             */
-/*   Updated: 2023/11/27 13:13:33 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 13:33:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void swap(T &a, T &b) {
 	b = temp;
 }
 
-template <typename T>
 T min(const T &a, const T &b) {
 	return (b < a) ? b : a;
 }
