@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:33:32 by thib              #+#    #+#             */
-/*   Updated: 2023/11/27 13:44:05 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/27 13:54:45 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,9 @@ int main() {
     iter(charArray, 5, displayElement<char>);
 	std::cout << std::endl;
 
+	// Test avec un tableau de caractères larges
+	wchar_t largeArray[] = { L'A', L'B', L'C', L'D', L'E' };
+	iter(largeArray, 5, displayElement<char>);
+	std::cout << std::endl;
     return 0;
 }
