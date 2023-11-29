@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 11:34:30 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/29 11:15:02 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int main(void)
 {
 	//COMMENTER BUREAUCRAT 1 PAR 1 POUR TEST
-	Bureaucrat *a = new Bureaucrat("thib", 150);
+	Bureaucrat *a = new Bureaucrat("thib", 140);
 	Bureaucrat *b = new Bureaucrat("oep");
 	Bureaucrat *c = new Bureaucrat();
-	Bureaucrat *d = new Bureaucrat(160);
+	Bureaucrat *d = new Bureaucrat(150);
 	//-----------------------------------------
 	std::cout << "Bureaucrat A" << std::endl;
 	std::cout << a << std::endl;
