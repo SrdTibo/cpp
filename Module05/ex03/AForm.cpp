@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:18:48 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 12:27:38 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/29 11:43:03 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ AForm::AForm(AForm const & src): _name(src.getName()), _isSigned(false), _gradeT
 	return;
 }
 
-AForm::AForm(std::string name, const int gradeToSign, const int _gradeToExec, std::string target): _name(name), _isSigned(0), _gradeToSign(gradeToSign), _gradeToExec(_gradeToExec), _target(target)
+AForm::AForm(std::string name, const int gradeToSign, const int gradeToExec, std::string target): _name(name), _isSigned(0), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec), _target(target)
 {
-	std::cout <<CYN<< name <<" AForm constructor called" <<NC<< std::endl;
+	std::cout <<CYN<< name <<" Form constructor called" <<NC<< std::endl;
+	setGradeToSign(gradeToSign);
+	setGradeToExec(gradeToExec);
 	return;
 }
 
@@ -81,6 +83,26 @@ void AForm::beSigned(Bureaucrat *b)
 		std::cout << "Bureaucrat " << b->getName() << " couldn't sign " << this->getName() << " form because grade is too low" << std::endl;
 		throw AForm::GradeTooLowException();
 	}
+}
+
+void	AForm::setGradeToExec(int grade)
+{
+	if (grade > 150)
+		throw AForm::GradeTooLowException();
+	else if (grade < 1)
+		throw AForm::GradeTooHighException();
+	else
+		return;
+}
+
+void	AForm::setGradeToSign(int grade)
+{
+	if (grade > 150)
+		throw AForm::GradeTooLowException();
+	else if (grade < 1)
+		throw AForm::GradeTooHighException();
+	else
+		return;
 }
 
 const char *AForm::GradeTooLowException::what(void) const throw()

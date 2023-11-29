@@ -6,13 +6,12 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 18:19:22 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/29 11:40:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_CLASS_H
 # define AFORM_CLASS_H
-#pragma once
 #define NC "\e[0m"
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
@@ -35,6 +34,8 @@ class	AForm
 		bool getSigned()const;
 		int getGradeSign() const;
 		int getGradeExec() const;
+		void setGradeToSign(int grade);
+		void setGradeToExec(int grade);
 		void beSigned(Bureaucrat *b);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 
@@ -54,7 +55,7 @@ class	AForm
 
 	private:
 		const std::string	_name;
-		bool					_isSigned;
+		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExec;
 		std::string 		_target;

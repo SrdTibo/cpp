@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:29:55 by thib              #+#    #+#             */
-/*   Updated: 2023/11/17 18:31:28 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/29 11:51:59 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int main(void)
 	AForm *h = g->makeForm("PresidentialPardonForm", "Bender");
 	if (h)
 		a->signForm(h);
+	h->execute(*a);
 	delete a;
 	delete b;
 	delete c;
