@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 11:12:19 by thib              #+#    #+#             */
-/*   Updated: 2023/11/15 16:22:34 by thib             ###   ########.fr       */
+/*   Updated: 2023/11/29 11:35:56 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class	Form
 		bool getSigned();
 		int getGradeSign() const;
 		int getGradeExec() const;
+		void setGradeToSign(int grade);
+		void setGradeToExec(int grade);
 		void beSigned(Bureaucrat *b);
 
 		Form &operator=( Form const & hrs);
@@ -51,7 +53,7 @@ class	Form
 
 	private:
 		const std::string	_name;
-		bool					_isSigned;
+		bool				_isSigned;
 		const int			_gradeToSign;
 		const int			_gradeToExec;
 };
