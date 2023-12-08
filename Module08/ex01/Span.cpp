@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:45:01 by thib              #+#    #+#             */
-/*   Updated: 2023/12/08 13:26:23 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:32:11 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,17 @@ void Span::addByIteratorRange( std::vector<int>::iterator begin, std::vector<int
 
 	if (begin != end) {
 		throw std::overflow_error("Erreur : Capacité maximale atteinte avant la fin de la plage d'itérateurs.");
+	}
+}
+
+void Span::randomFill(void)
+{
+	unsigned int i = 0;
+
+	while (i < _N)
+	{
+		addNumber(rand());
+		i++;
 	}
 }
 

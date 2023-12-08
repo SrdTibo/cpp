@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:44:54 by thib              #+#    #+#             */
-/*   Updated: 2023/12/08 13:18:08 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:28:47 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class	Span
 		int longestSpan(void) const;
 		int shortestSpan(void) const;
 		void addByIteratorRange( std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		void randomFill(void);
 		void display() const;
 
 	private:

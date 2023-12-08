@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:44:43 by thib              #+#    #+#             */
-/*   Updated: 2023/12/08 13:26:54 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:32:26 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 	try {
-		Span				s(5);
+		Span s(5);
 		std::vector<int>	vect;
 
 		vect.push_back(25);
@@ -42,6 +42,13 @@ int main()
 		s.addByIteratorRange(vect.begin(), vect.end());
 		s.display();
 
+	} catch (std::exception& e) {
+		std::cerr << "EXCEPTION: " << e.what() << std::endl;
+	}
+	try {
+		Span s(10);
+		s.randomFill();
+		s.display();
 	} catch (std::exception& e) {
 		std::cerr << "EXCEPTION: " << e.what() << std::endl;
 	}
