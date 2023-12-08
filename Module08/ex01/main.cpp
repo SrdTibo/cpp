@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:44:43 by thib              #+#    #+#             */
-/*   Updated: 2023/12/07 16:34:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:26:54 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,27 @@ int main()
 		sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+		sp.display();
 	}
 	catch (const std::exception& e)
 	{
 		std::cerr << "Exception : " << e.what() << std::endl;
 	}
+	try {
+		Span				s(5);
+		std::vector<int>	vect;
+
+		vect.push_back(25);
+		vect.push_back(5);
+		vect.push_back(12);
+		vect.push_back(90);
+		vect.push_back(-2);
+		s.addByIteratorRange(vect.begin(), vect.end());
+		s.display();
+
+	} catch (std::exception& e) {
+		std::cerr << "EXCEPTION: " << e.what() << std::endl;
+	}
+
 	return 0;
 }

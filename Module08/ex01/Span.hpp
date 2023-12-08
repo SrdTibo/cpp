@@ -6,18 +6,19 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 14:44:54 by thib              #+#    #+#             */
-/*   Updated: 2023/12/07 16:34:27 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:18:08 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_CLASS_H
 # define SPAN_CLASS_H
-#include <iostream>
-#include <string>
-#include <vector>
-#include <stdexcept>
-#include <algorithm>
-#include <limits>
+# include <iostream>
+# include <string>
+# include <vector>
+# include <stdexcept>
+# include <algorithm>
+# include <limits>
+# include <cstddef>
 
 class	Span
 {
@@ -29,10 +30,12 @@ class	Span
 		void addNumber(int num);
 		int longestSpan(void) const;
 		int shortestSpan(void) const;
+		void addByIteratorRange( std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		void display() const;
 
 	private:
-		unsigned int N;  // Taille maximale de la Span
-		std::vector<int> numbers;  // Vecteur pour stocker les entiers
-		void checkSize() const;
+		unsigned int _N;  // Taille maximale de la Span
+		std::vector<int> _numbers;  // Vecteur pour stocker les entiers
+		void _checkSize() const;
 };
 #endif
