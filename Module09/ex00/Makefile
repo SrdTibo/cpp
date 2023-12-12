@@ -6,7 +6,7 @@
 #    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/12/12 11:57:40 by tserdet          ###   ########.fr        #
+#    Updated: 2023/12/12 13:23:17 by tserdet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-SRC = main.cpp
+SRC = main.cpp BitcoinExchange.cpp
 # VARIABLES FOR DOT O
 SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION

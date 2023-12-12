@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:57:55 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/12 11:59:11 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/12 14:00:12 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,21 @@
 #define CYN "\e[0;36m"
 #define REDB "\e[41m"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
+#include <map>
 
 class	BitcoinExchange
 {
 	public:
-		BitcoinExchange(void);
+		BitcoinExchange(const std::string argument);
 		~BitcoinExchange(void);
 		BitcoinExchange(const BitcoinExchange &src);
 
 		BitcoinExchange &operator=( BitcoinExchange const & hrs);
+
+	private:
+		std::map<int, double> _bitcoinPrices;
 };
 #endif
