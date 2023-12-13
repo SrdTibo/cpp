@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:57:55 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/13 15:22:25 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/13 16:27:14 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 class	BitcoinExchange
 {
 	public:
+		BitcoinExchange(void);
 		BitcoinExchange(const std::string argument);
 		~BitcoinExchange(void);
 		BitcoinExchange(const BitcoinExchange &src);
@@ -40,5 +41,6 @@ class	BitcoinExchange
 		bool _isDateValid(const std::string& dateString);
 		void _parseCsv(void);
 		void _printBitcoinPrices() const;
+		double _getBitcoinPrice(const std::string& date) const;
 };
 #endif
