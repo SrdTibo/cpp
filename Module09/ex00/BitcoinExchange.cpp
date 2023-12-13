@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:57:53 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/13 14:50:07 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/13 15:37:22 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ BitcoinExchange::BitcoinExchange(const std::string argument)
 			i++;
 		}
 		_parseCsv();
+		/* _printBitcoinPrices();
+		std::cout << "bitcoinPrices.size : " << _bitcoinPrices.size() << std::endl; */
 	}
 	catch (const std::exception& e)
 	{
@@ -104,29 +106,41 @@ bool BitcoinExchange::_isDateValid(const std::string& date)
 	return true;
 }
 
-void BitcoinExchange::_parseCsv(void)
-{
+void BitcoinExchange::_parseCsv(void) {
 	int i = 0;
 	std::ifstream inputFile("data.csv");
 
 	if (!inputFile.is_open())
-		throw std::invalid_argument(std::string(RED) + "Invalid data file\n" + std::string(RED));
+		throw std::invalid_argument("Invalid data file");
+
 	if (inputFile.peek() == std::ifstream::traits_type::eof())
-		throw std::runtime_error(std::string(RED) + "Empty data file\n" + NC);
+		throw std::runtime_error("Empty data file");
+
 	std::string line;
 	while (std::getline(inputFile, line))
 	{
-		std::istringstream iss(line);
-		std::string datePart, exchangePart;
-		char* endPtr;
-		if (line.find('|') != std::string::npos)
+		if (i > 0)
 		{
-			if (std::getline(iss, datePart, '|') && std::getline(iss, exchangePart))
+			char* endptr;
+			std::istringstream iss(line);
+			std::string datePart, valuePart;
+
+			if (line.find(',') != std::string::npos)
 			{
-				_bitcoinPrices.insert(std::make_pair(datePart.c_str(),strtod(exchangePart.c_str(), &endPtr)));
+				if (std::getline(iss, datePart, ',') && std::getline(iss, valuePart))
+					_bitcoinPrices[datePart] =  strtod(valuePart.c_str(), &endptr);
 			}
 		}
 		i++;
 	}
+
 	inputFile.close();
+}
+
+void BitcoinExchange::_printBitcoinPrices() const
+{
+	std::map<std::string, double>::const_iterator it;
+	for (it = _bitcoinPrices.begin(); it != _bitcoinPrices.end(); ++it) {
+		std::cout << it->first << ": " << it->second << std::endl;
+	}
 }

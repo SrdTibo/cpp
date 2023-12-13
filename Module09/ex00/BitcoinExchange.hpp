@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:57:55 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/13 14:24:24 by thib             ###   ########.fr       */
+/*   Updated: 2023/12/13 15:22:25 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ class	BitcoinExchange
 		BitcoinExchange &operator=( BitcoinExchange const & hrs);
 
 	private:
-		std::map<char, double> _bitcoinPrices;
+		std::map<std::string, double> _bitcoinPrices;
 		bool _isValidFormat(const std::string& line);
 		bool _isDateValid(const std::string& dateString);
 		void _parseCsv(void);
+		void _printBitcoinPrices() const;
 };
 #endif
