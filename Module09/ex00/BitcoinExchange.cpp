@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:57:53 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/12 16:10:32 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/13 14:50:07 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,32 @@ BitcoinExchange::BitcoinExchange(const std::string argument)
 	std::ifstream inputFile(argument.c_str());
 
 	if (!inputFile.is_open())
-		throw std::invalid_argument(std::string(RED) + "Invalid file\n" + std::string(RED));
+		throw std::invalid_argument(std::string(RED) + "Invalid input file\n" + std::string(RED));
 	if (inputFile.peek() == std::ifstream::traits_type::eof())
-		throw std::runtime_error(std::string(RED) + "Empty file\n" + NC);
+		throw std::runtime_error(std::string(RED) + "Empty input file\n" + NC);
 	try
 	{
 		std::string line;
 		while (std::getline(inputFile, line))
 		{
+			std::cout << "Line " << i << ": ";
 			if (i == 0)
 			{
 				if (line != "date | value")
-				{
 					throw std::runtime_error(std::string(RED) + "Invalid information in file\n" + std::string(RED));
-				}
+				else
+					std::cout << GRN << "OK" << NC << std::endl;
 			}
 			else if (i > 0)
 			{
 				if (!_isValidFormat(line))
 					throw std::runtime_error(std::string(RED) + "Invalid information in file\n" + std::string(RED));
+				else
+					std::cout << GRN << "OK" << NC << std::endl;
 			}
-			std::cout << line << std::endl;
 			i++;
 		}
+		_parseCsv();
 	}
 	catch (const std::exception& e)
 	{
@@ -99,4 +102,31 @@ bool BitcoinExchange::_isDateValid(const std::string& date)
 		}
 	}
 	return true;
+}
+
+void BitcoinExchange::_parseCsv(void)
+{
+	int i = 0;
+	std::ifstream inputFile("data.csv");
+
+	if (!inputFile.is_open())
+		throw std::invalid_argument(std::string(RED) + "Invalid data file\n" + std::string(RED));
+	if (inputFile.peek() == std::ifstream::traits_type::eof())
+		throw std::runtime_error(std::string(RED) + "Empty data file\n" + NC);
+	std::string line;
+	while (std::getline(inputFile, line))
+	{
+		std::istringstream iss(line);
+		std::string datePart, exchangePart;
+		char* endPtr;
+		if (line.find('|') != std::string::npos)
+		{
+			if (std::getline(iss, datePart, '|') && std::getline(iss, exchangePart))
+			{
+				_bitcoinPrices.insert(std::make_pair(datePart.c_str(),strtod(exchangePart.c_str(), &endPtr)));
+			}
+		}
+		i++;
+	}
+	inputFile.close();
 }
