@@ -6,7 +6,7 @@
 #    By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 11:51:44 by tserdet           #+#    #+#              #
-#    Updated: 2023/12/12 13:23:17 by tserdet          ###   ########.fr        #
+#    Updated: 2023/12/14 13:12:49 by tserdet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 #-----------------VARIABLES------------------
 #--------------------------------------------
 # VARIABLES FOR DOT C
-SRC = main.cpp BitcoinExchange.cpp
+SRC = main.cpp RPN.cpp
 # VARIABLES FOR DOT O
 SRC_OBJ = $(SRC:.cpp=.o)
 # VARIABLES FOR DO A COMPILATION
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME =	btc
+NAME =	RPN
 RM = rm -rf
 #--------------------------------------------
 #-----------------EXECUTING------------------
