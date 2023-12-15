@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:23:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/15 15:55:22 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/15 16:09:28 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ class	PmergeMe
 		~PmergeMe(void);
 		PmergeMe(const PmergeMe &src);
 		PmergeMe &operator=(PmergeMe const & hrs);
-		void afficherDeque(void);
-		void afficherVector() const;
+		template <typename Container>
+		void afficherContainer(const Container& container) const;
 
 	private:
 		std::vector<int> _vct;
 		std::deque<int> _dq;
 		bool _parse(char **arg);
-		void _fillDq(char **arg);
-		void _fillVct(char **arg);
+		template <typename Container>
+		void _fillContainer(Container& container, char** arg);
 };
 #endif
