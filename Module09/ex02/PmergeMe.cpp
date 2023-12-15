@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:23:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/15 16:09:55 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/15 16:14:40 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ bool PmergeMe::_parse(char **arg)
 				y++;
 			}
 		}
-		std::cout << arg[i] << std::endl;
 		y = 0;
 		i++;
 	}
