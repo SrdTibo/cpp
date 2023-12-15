@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:23:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/15 15:40:44 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/15 15:56:06 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ PmergeMe::PmergeMe(char **arg)
 			throw std::invalid_argument(std::string(RED) + "Invalid input argument\n" + std::string(RED));
 		else
 		{
-
+			_fillDq(arg);
+			_fillVct(arg);
+			afficherDeque();
+			afficherVector();
 		}
 	}
 	catch (const std::exception& e)
@@ -61,3 +64,45 @@ bool PmergeMe::_parse(char **arg)
 	}
 	return (0);
 }
+
+void PmergeMe::_fillDq(char **arg)
+{
+	int i = 0;
+	while (arg[i])
+	{
+		if (i > 0)
+			_dq.push_back(atoi(arg[i]));
+		i++;
+	}
+}
+
+void PmergeMe::_fillVct(char **arg)
+{
+	int i = 0;
+	while (arg[i])
+	{
+		if (i > 0)
+			_vct.push_back(atoi(arg[i]));
+		i++;
+	}
+}
+
+void PmergeMe::afficherDeque(void)
+{
+	std::deque<int>::const_iterator it;
+	std::cout << "Deque element: ";
+	for (it = _dq.begin(); it != _dq.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
+
+void PmergeMe::afficherVector() const
+{
+	std::vector<int>::const_iterator it;
+	std::cout << "Vector elements: ";
+	for (it = _vct.begin(); it != _vct.end(); ++it) {
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+}
+
