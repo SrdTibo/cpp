@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:23:23 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/18 11:47:13 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/18 11:48:50 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ PmergeMe::PmergeMe(char **arg)
 			clock_t end2 = clock();
 			double time2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
 			afficherContainer(_dq);
-			afficherContainer(_vct);
 			std::cout << "Time to process a range of " << _dq.size() << " elements with std::deque container: " << time1 << " us" << std::endl;
 			std::cout << "Time to process a range of " << _vct.size() << " elements with std::vector container: " << time2 << " us" << std::endl;
 		}
