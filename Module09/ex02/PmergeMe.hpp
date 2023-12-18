@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 14:23:25 by tserdet           #+#    #+#             */
-/*   Updated: 2023/12/15 16:09:28 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/12/18 11:34:00 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 #include <cstdlib>
 #include <vector>
 #include <deque>
+#include <ctime>
 
 class	PmergeMe
 {
@@ -36,6 +37,8 @@ class	PmergeMe
 		PmergeMe &operator=(PmergeMe const & hrs);
 		template <typename Container>
 		void afficherContainer(const Container& container) const;
+		void mergeInsertSortVector(std::vector<int>& arr);
+		void mergeInsertSortDeque(std::deque<int>& arr);
 
 	private:
 		std::vector<int> _vct;
